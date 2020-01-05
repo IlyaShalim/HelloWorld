@@ -1,3 +1,0 @@
-let str;
-str = prompt("Введите пример")
-alert(eval(str));
