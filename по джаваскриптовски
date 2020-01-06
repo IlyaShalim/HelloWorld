@@ -1,0 +1,7 @@
+'use strict';
+let str = '1plus2plus3minus4'
+let num;
+num = str.replace(/plus/g, '+');
+num = num.replace(/minus/g, '-');
+
+alert( eval(num)) ; 
