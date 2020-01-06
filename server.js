@@ -7,7 +7,7 @@ let num;
 let sum=0;
 let n = 0;
 let mer = 0;
-str = prompt("Введите пример")
+str = prompt("Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ°ГЁГ¬ГҐГ°")
 do {
     num = str.slice(n, n + 1);
     if (num == 1 || num == 2 || num == 3 || num == 4 || num == 5
@@ -22,7 +22,7 @@ do {
     }
     sum = mer;
     n++;
-} while (n < 100);
+} while (num);
 alert(eval(sum));
 
 
