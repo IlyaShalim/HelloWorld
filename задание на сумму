@@ -1,17 +1,23 @@
-'use strict';
-
 let str = [];
 let num;
-let sum = 0;
-
 while (true) {
-    let fun = prompt("Vedite 4islo")
-    if (fun == "" || fun == null) break;
-    str.push(+fun);
+    let d = confirm("Zapustit programmu?");
+    if (d === false) {
+        break;
+    } else {
+        summArr()
+    };
 }
-for (let num of str) {
-    sum = sum + num;
+function summArr() {
+    let sum = 0;
+    while (true) {
+        let fun = prompt("Vedite 4islo")
+        if (fun == "" || fun == null) break;
+        str.push(+fun);
+    }
+    for (let num of str) {
+        sum = sum + num;
+    }
+    alert(sum);
+    
 }
-
-alert(sum);
-
