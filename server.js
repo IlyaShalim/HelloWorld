@@ -36,11 +36,8 @@ function findIn(data, n) {
 			}
 		}
 	}
-	//let vsePut = da + ',' + dat;
-	//return vsePut;
 	}
 
-//findIn(data, '111')
 
 findIn(data, '111');
 
