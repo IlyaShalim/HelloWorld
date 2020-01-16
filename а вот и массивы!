@@ -8,8 +8,8 @@ const data = {
 		a: '111',
 	},
 };
-
-function findIn(fer, n, da) {
+let arr = [];
+function findIn(fer, n, da, arr) {
 	let q;
 	let d = da;
 	for (let key in fer) {
@@ -18,14 +18,15 @@ function findIn(fer, n, da) {
 			da = da + key + '.';
 		}
 		if (n == fer[key]) {
-			let dat =d + key + '.';
-			alert(dat);
+			let dat = d + key + '.';
+			arr.push(dat);
 		}
 		
 	}
 
-	if (q) findIn(q, n, da)
+	if (q) findIn(q, n, da, arr)
+	return arr;
 	}
 
-findIn(data, '111', '');
-findIn(data, '123', '');
+alert(findIn(data, '111', '', arr = []));
+alert(findIn(data, '123', '', arr = []));
