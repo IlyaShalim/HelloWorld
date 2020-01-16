@@ -9,39 +9,23 @@ const data = {
 	},
 };
 
-function findIn(data, n) {
-	for (let key in data) {
-		let dat = '';
-		
-		if (n == data[key]) {
-			dat += key;
-			alert(dat)
-		};
-		let q = data[key];
-		
-		for (let key in q) {
-			dat = 'a,'
-			if (n == q[key]) {
-				dat += key;
-				alert(dat)
-			};
-			let w = q[key];
-			for (let key in w) {
-				let dat = 'a,b,'
-				if (n == w[key]) {
-					dat += key;
-					alert(dat)
-				};
-				
-			}
+function findIn(fer, n, da) {
+	let q;
+	let d = da;
+	for (let key in fer) {
+		if (typeof (fer[key]) === 'object') {
+			q = fer[key];
+			da = da + key + '.';
 		}
+		if (n == fer[key]) {
+			let dat =d + key + '.';
+			alert(dat);
+		}
+		
 	}
+
+	if (q) findIn(q, n, da)
 	}
 
-
-findIn(data, '111');
-
-
-findIn(data, '123');
-
-
+findIn(data, '111', '');
+findIn(data, '123', '');
