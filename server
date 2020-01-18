@@ -2,26 +2,23 @@
 
 let arr = [4, 7, 3, 4, 10];
 let w = 0;
-for (let i = 0; i < arr.length; i++) {
-    w = i;
-}
 let q = 0;
 let ar = [];
-function perebor(arr, ar, q) {
-    let dum = arr.lenght;
+function perebor(arr, arrSum, q) {
     let sum = 0 ;
     for (let i = 0; i < arr.length; i++) {
         if (i == q || arr[i] == undefined) continue;
-        sum += arr[i]
+        sum += arr[i];
+        w = i;
     }
 
-    ar.push(sum);
+    arrSum.push(sum);
     q++;
 
     if (q <= w) {
-        perebor(arr, ar, q);
+        perebor(arr, arrSum, q);
     }
-    return ar;
+    return arrSum;
 
 }
 
