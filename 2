@@ -1,0 +1,63 @@
+'use strict';
+
+
+function Input() {
+
+    let numbers = [];
+    let value;
+    while (true) {
+
+        value = prompt("Введите число", 0);
+
+        if (value === "") {
+            continue
+        } else if (!isFinite(value) || value === null) break;
+
+        numbers.push(+value);
+    }
+
+    if (value == '+') {
+
+        let sum = 0;
+        for (let number of numbers) {
+            sum += number;
+        }
+        alert(sum);
+    } else if (value == '/') {
+
+        let sum = 0;
+
+        for (let number of numbers) {
+            if (sum == 0) {
+                sum = number;
+                continue;
+            }
+            sum = sum / number;
+        }
+        alert(sum);
+    } else if (value == '*') {
+
+        let sum = 0;
+        for (let number of numbers) {
+            if (sum == 0) {
+                sum = number;
+                continue;
+            }
+            sum = sum * number;
+        }
+        alert(sum);
+    } else if (value == '-') {
+
+        let sum = 0;
+        for (let number of numbers) {
+            if (sum == 0) {
+                sum = number;
+                continue;
+            }
+            sum = sum - number;
+        }
+        alert(sum);
+    }
+}
+
+Input();
