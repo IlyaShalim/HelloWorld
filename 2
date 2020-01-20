@@ -1,63 +1,35 @@
 'use strict';
 
 
-function Input() {
-
-    let numbers = [];
-    let value;
-    while (true) {
-
-        value = prompt("Введите число", 0);
-
-        if (value === "") {
-            continue
-        } else if (!isFinite(value) || value === null) break;
-
-        numbers.push(+value);
+function Input(numbers) {
+    let value = prompt('chislo', 0);
+    if (value == '' ) {
+        Input(numbers);
+    } else if(value == null) {
+        return;
+    }else if (!isFinite(value)) {
+        sum();
+        return;
     }
-
-    if (value == '+') {
-
-        let sum = 0;
-        for (let number of numbers) {
-            sum += number;
+    numbers.push(+value)
+    Input(numbers);
+    function sum() {
+        let com = 0;
+        let symv;
+        if (value == 'sum') {
+            symv = '+';
         }
-        alert(sum);
-    } else if (value == '/') {
-
-        let sum = 0;
-
-        for (let number of numbers) {
-            if (sum == 0) {
-                sum = number;
+        for (let chislo of numbers) {
+            if (com == 0) {
+                com = chislo;
                 continue;
             }
-            sum = sum / number;
+            com += symv;
+            com += chislo;
         }
-        alert(sum);
-    } else if (value == '*') {
-
-        let sum = 0;
-        for (let number of numbers) {
-            if (sum == 0) {
-                sum = number;
-                continue;
-            }
-            sum = sum * number;
-        }
-        alert(sum);
-    } else if (value == '-') {
-
-        let sum = 0;
-        for (let number of numbers) {
-            if (sum == 0) {
-                sum = number;
-                continue;
-            }
-            sum = sum - number;
-        }
-        alert(sum);
+        alert(eval(com));
     }
+ 
 }
 
-Input();
+Input([]);
